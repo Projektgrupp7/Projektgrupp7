@@ -4,8 +4,7 @@
 function val_reg($_name, $_email, $_pword)
 {
   $errors = array();
-
-  if(0 === preg_match("/\S+/", $_name)
+  if(0 === preg_match("/\S+/", $_name))
   {
     $errors["name"] = "Inget namn angivet.";
   }
@@ -28,4 +27,24 @@ function val_reg($_name, $_email, $_pword)
   }
 }
 
+function val_log($_email, $_pword)
+{
+  $errors = array();
+  if(0 === preg_match("/.+@.+\..+/", $_email)){
+      $errors["email"] = "Inkorrekt email";
+  }
+
+  if(0 === preg_match("/\S+/", $_pword) || strlen($_pword)<8)
+  {
+    $errors["password"] = "För kort lösenord.";
+  }
+
+  if(0 === count($errors))
+  {
+      return true;
+  }
+  else{
+    return false;
+  }
+}
 ?>

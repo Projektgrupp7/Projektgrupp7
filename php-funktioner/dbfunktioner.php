@@ -18,7 +18,8 @@ function connect(){
 
 #Funktion som tar en query och en connection och genomför queryn.
 #True och lyckas false annars. Om false visar den error.
-function add_db($sql, $conn){
+function db($sql, $conn){
+  $conn = connect();
   if($conn->query($sql)===FALSE)
   {
     echo "Error: " . $sql . "<br>" . $conn->error;
@@ -29,5 +30,26 @@ function add_db($sql, $conn){
   }
 }
 
+#Funktion som hämtar en användares salt från databasen
+function getSalt($email)
+{
+  $sql = "SELECT salt FROM users WHERE email = '$email'";
+  $conn = connect();
+  $result = mysqli_fetch_array(mysqli_query($conn,$sql));
+  $salt = $result[0];
+  mysqli_close($conn);
+  return $salt;
+}
+
+#Funktion som hämtar det hashade lösenordet från db
+function getPw($email)
+{
+  $sql = "SELECT pw FROM users WHERE email = '$email'";
+  $conn = connect();
+  $result = mysqli_fetch_array(mysqli_query($conn,$sql));
+  $pw = $result[0];
+  mysqli_close($conn);
+  return $pw;
+}
 
 ?>

@@ -5,7 +5,7 @@
   </head>
   <div class="login">
   <h1>Vänligen logga in</h1>
-  <form class="login" name='form' onsubmit="return clientval();" action="login-process.php" method='POST'>
+  <form class="login" name='form' onsubmit="" action="loginprocess.php" method='POST'>
     <label for="email">Email:  </label><br>
     <input type="text" name="email" value=""><br>
     <label for="password">Lösenord: </label><br>

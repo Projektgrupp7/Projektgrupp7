@@ -1,26 +1,29 @@
 <?php
-include("assets/bootstrap.php")
-  #REGISTRERINGSFUNKTION. EJ TESTAD ÄNNU.
+include_once("assets\bootstrap.php");
+  //Kontrollerar att ett formulär faktiskt är skickat, blir annars error
+  //om man refereras hit.
   if (isset($_POST['subReg']))
   {
     $conn = connect();
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    //tilldelar variabler och säkrar för SQL.
+    $name = mysqli_real_escape_string($conn, $_POST['namn']);
     $email = mysqli_real_escape_string($conn,$_POST['email']);
     $pw = mysqli_real_escape_string($conn, $_POST['password']);
     //Kör valideringsfunktionen
-    if(!val_reg())
+    if(!val_reg($name,$email,$pw))
     {
       header("Location: register.php?msg=Något gick fel, vänligen försök igen");
       die();
     }
     else
     {
+      //Saltar lösenordet samt gör query för att lägga till användaren i DB.
       $salt = salt();
       $encpw = md5($salt . $pw);
       $query = "INSERT INTO users(name, email, pw, salt, admin)
             VALUES('$name', '$email', '$encpw', '$salt', 'FALSE');";
-
-      if(add_db($query, $conn))
+      //Genomför och kontrollerar att registreringen gick.
+      if(db($query, $conn))
         {
           $conn->close();
           header("Location: login.php?msg=Registered! Please log in below.");
@@ -29,5 +32,4 @@ include("assets/bootstrap.php")
         die();
         }
     }
-  }
  ?>
