@@ -5,8 +5,8 @@
     <title></title>
   </head>
   <body>
-    <form class='form' name = 'form' onsubmit= method='POST' action='register-process.php'>
-      <label for="namn">Ditt namn: </label>
+    <form class='form' name='form' onsubmit= method='POST' action='register-process.php'>
+      <label for="namn">Namn: </label>
       <br>
       <input type="text" name="namn" value="">
       <br>
@@ -14,11 +14,11 @@
       <br>
       <input type="text" name="email" value="">
       <br>
-      <label for="pass">Password (min 8 characters):  </label>
+      <label for="pass">Lösenord, minst 8 tecken: </label>
       <br>
       <input type="password" name="password" value="">
-      <br><br>
-      <input type="submit" name="subReg" value="Register">
+      <br>
+      <input type="submit" name="subReg" value="Registrera">
     </form>
   </body>
 </html>
