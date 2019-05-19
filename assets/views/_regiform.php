@@ -18,6 +18,7 @@
       <br>
       <input type="password" name="password" value="">
       <br>
+      <br>
       <input type="submit" name="subReg" value="Registrera">
     </form>
   </body>
