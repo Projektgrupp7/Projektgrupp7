@@ -5,12 +5,16 @@
     <title></title>
   </head>
   <body>
-    <form class='form' name = 'form' onsubmit="return clientval();" method='POST' action='register-process.php'>
+    <form class='form' name = 'form' onsubmit= method='POST' action='register-process.php'>
+      <label for="namn">Ditt namn: </label>
+      <br>
+      <input type="text" name="namn" value="">
+      <br>
       <label for="email">Email: </label>
       <br>
       <input type="text" name="email" value="">
       <br>
-      <label for="password">Password (min 8 characters):  </label>
+      <label for="pass">Password (min 8 characters):  </label>
       <br>
       <input type="password" name="password" value="">
       <br><br>
