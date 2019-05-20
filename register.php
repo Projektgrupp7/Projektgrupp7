@@ -9,7 +9,8 @@
     <?php
     include("assets/views/_header.php");
     include("assets/views/_regiform.php");
-    include("assets/views/_footer.php");?>
+    include("assets/views/_footer.php");
+    ?>
     <script type="text/javascript" src="assets\javascript\validering.js"></script>
   </body>
 </html>
