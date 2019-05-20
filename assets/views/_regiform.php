@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    <form class='form' name='form' onsubmit= method='POST' action='regprocess.php'>
+    <form class='form' name='form' onsubmit="return reg_val();" method='POST' action='regprocess.php'>
       <label for="namn">Namn: </label>
       <br>
       <input type="text" name="namn" value="">

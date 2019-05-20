@@ -1,7 +1,9 @@
 <?php
 include_once("assets\bootstrap.php");
+#Hämtar datan från formuläret
 $email = $_POST['email'];
 $pw = $_POST['password'];
+#Validerar formdatan och kontrollerar lösenorder om validering går igenom
 if(val_log($email, $pw)){
     if(md5(getSalt($email) . $pw) === getPw($email))
     {
