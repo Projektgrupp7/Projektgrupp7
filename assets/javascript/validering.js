@@ -15,6 +15,7 @@ function reg_val()
   }
 }
 
+//HEJ
 //Validering av formdata från inloggning
 function log_val()
 {

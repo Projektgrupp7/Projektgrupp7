@@ -1,0 +1,16 @@
+body {
+   background: #99BEA7;
+   font-family: 'Nunito Sans', sans-serif;
+}
+
+h1 {
+  color: black;
+  text-align: left;
+
+}
+
+p {
+  color: black;
+  text-align: left;
+  font-size: 14px;
+}
