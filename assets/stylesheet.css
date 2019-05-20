@@ -1,10 +1,12 @@
 body {
    background: #99BEA7;
+   font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
   color: black;
   text-align: left;
+
 }
 
 p {

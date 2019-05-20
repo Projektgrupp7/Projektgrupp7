@@ -9,7 +9,7 @@
     <input type="text" name="email" value=""><br>
     <label for="password">Lösenord: </label><br>
     <input type="password" name="password" value=""><br><br>
-    <input type="submit" name="login" value="Log in">
+    <input type="submit" name="login" value="Logga in">
   </div>
   <p>Inte registrerad? <a href=register.php>Tryck här!</a></p>
   </form>

@@ -2,7 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <?php include_once("assets/bootstrap.php");?>
+      <link rel="stylesheet" href="assets/stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+          <?php include_once("assets/bootstrap.php");?>
     <title>Register</title>
   </head>
   <body>
