@@ -1,5 +1,6 @@
 function reg_val()
 {
+  //HEJSAN ALLIHOPA
   let email = document.form.email.value;
   let password = document.form.password.value;
   let name = document.form.namn.value;
