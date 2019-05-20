@@ -17,13 +17,10 @@
     <label for="time">Time: </label><br>
     <input type="text" name="time" value=""><br>
 
-    <input type="checkbox" name="preference" value="vegan"> Vegan<br>
-    <input type="checkbox" name="preference" value="gluten"> Gluten free<br>
-    <input type="checkbox" name="preference" value="dairy"> Dairy free<br>
-
-    #ska fixa så att det går att lägga till bilder men är mycket svårare
-    än resten så försöker förstå hur det funkar
-
+    <input type="checkbox" name="vegan" value="vegan"> Vegan<br>
+    <input type="checkbox" name="gluten" value="gluten"> Gluten free<br>
+    <input type="checkbox" name="dairy" value="dairy"> Dairy free<br>
+    
     <input type="submit" name="submit" value="Submit">
   </div>
   </form>
