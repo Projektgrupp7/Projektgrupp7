@@ -1,4 +1,5 @@
 <?php
+sesssion_start();
 include_once("assets\bootstrap.php");
 #Hämtar datan från formuläret
 $email = $_POST['email'];
@@ -7,8 +8,7 @@ $pw = $_POST['password'];
 if(val_log($email, $pw)){
     if(md5(getSalt($email) . $pw) === getPw($email))
     {
-      //$_SESSION['loggedin'] = true;
-      //$_SESSION['email'] = $email;
+      $_SESSION['email'] = $email;
       header("Location: index.php?msg=Log in successful.");
     }
     else{
