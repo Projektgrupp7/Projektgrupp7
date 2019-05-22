@@ -20,8 +20,15 @@
     <input type="checkbox" name="vegan" value="vegan"> Vegan<br>
     <input type="checkbox" name="gluten" value="gluten"> Gluten free<br>
     <input type="checkbox" name="dairy" value="dairy"> Dairy free<br>
-    
+
     <input type="submit" name="submit" value="Submit">
   </div>
   </form>
+
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+  Select image to upload:
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Upload Image" name="submit">
+  </form> 
+
 </html>
