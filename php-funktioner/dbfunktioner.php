@@ -40,4 +40,83 @@ function get_one($email, $column)
   mysqli_close($conn);
   return $salt;
 }
+
+function add_rec()
+{
+  $conn = connect();
+  $a = mysqli_real_escape_string($conn ,$_POST['recipename']);
+  $b = mysqli_real_escape_string($conn, $_POST['description']);
+  $c = mysqli_real_escape_string($conn, $_POST['ingredients']);
+  $d = mysqli_real_escape_string($conn, $_POST['instructions']);
+  $e = mysqli_real_escape_string($conn, $_POST['time']);
+
+  if(isset($_POST['vegan']))
+  {
+  $vegan = $_POST['vegan'];
+  }
+
+  if(isset($_POST['gluten']))
+  {
+  $gluten = $_POST['gluten'];
+  }
+
+  if(isset($_POST['dairy']))
+  {
+  $mjölk = $_POST['dairy'];
+  }
+
+  $email = $_SESSION['email'];
+
+  $query_getuserid = "SELECT id FROM users WHERE email = '$email'";
+  $userid = mysqli_fetch_array(mysqli_query($conn, $query_getuserid))[0];
+
+  $query_getpostid = "SELECT MAX(rec_id) FROM recipe";
+  $postid = mysqli_fetch_array(mysqli_query($conn, $query_getpostid))[0] + 1;
+
+  $query1 = "INSERT INTO recipe (name, beskrivning, ingredients, instructions, tid, poster)
+  VALUES('$a', '$b', '$c', '$d', '$e', '$userid')";
+
+  $query_vegan = "INSERT INTO vegan(postid) VALUES('$postid')";
+  $query_gluten = "INSERT INTO gluten(postid) VALUES('$postid')";
+  $query_mjölk = "INSERT INTO mjölk(postid) VALUES('$postid')";
+
+  $check = true;
+  if(!mysqli_query($conn, $query1))
+  {
+    $check = false;
+  }
+
+  if(isset($_POST['vegan']))
+  {
+    if(!mysqli_query($conn, $query_vegan))
+    {
+      $check = false;
+    }
+  }
+
+  if(isset($_POST['gluten']))
+  {
+    if(!mysqli_query($conn, $query_gluten))
+    {
+      $check = false;
+    }
+  }
+
+  if(isset($_POST['dairy']))
+  {
+    if(!mysqli_query($conn, $query_mjölk))
+    {
+      $check = false;
+    }
+  }
+
+  if($check)
+  {
+    header("Location: index.php?msg=Recept tillagt!");
+  }
+  else {
+    header("Location: postrecipe.php?msg=Försök att lägga till misslyckades, vänligen försök igen. ");
+  }
+}
+
 ?>

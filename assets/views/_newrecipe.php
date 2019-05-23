@@ -6,21 +6,22 @@
   <h1>Lägg till ditt recept!</h1>
   <form class="newrecipe" name='recipe' onsubmit="return rec_val();" action="postrecprocess.php" method='POST'>
 
-    <label for="recipename">Namn*:  </label><br>
+    <label for="recipename">Rättens namn*:  </label><br>
     <input type="text" name="recipename" value=""><br>
     <label for="description">Beskrivning*: </label><br>
     <input type="text" name="description" value=""><br>
     <label for="ingredients">Ingredienser*: </label><br>
     <input type="text" name="ingredients" value=""><br>
-    <label for="instructions">Instruktioner*: </label><br>
-    <input type="text" name="instructions" value=""><br>
     <label for="time">Tid i minuter*: </label><br>
     <input type="text" name="time" value=""><br>
+    <label for="instructions">Instruktioner*: </label><br>
+    <textarea rows="8" cols="50" name="instructions"></textarea>
+    <br>
 
     <input type="checkbox" name="vegan" value="vegan"> Veganskt<br>
     <input type="checkbox" name="gluten" value="gluten"> Glutenfritt<br>
     <input type="checkbox" name="dairy" value="dairy"> Mjölkfritt<br>
-
+    <br>
     <input type="submit" name="submit" value="Posta">
     <p>* = obligatoriska fält</p>
   </div>
