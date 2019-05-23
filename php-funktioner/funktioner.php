@@ -17,7 +17,7 @@ function try_log(){
   }
 }
 
-function logbtn()
+function log_btn()
   {
     if(is_log() == true)
     {
@@ -27,4 +27,13 @@ function logbtn()
       echo "<li><a href=login.php class=" . "menu" . ">LOG<br>IN</a></li>";
     }
   }
+
+function admin_btn()
+{
+  if(isset($_SESSION['admin']))
+  {
+    echo "<li><a href=removeposts.php class=" . "menu" . ">MANAGE<br>POSTS</a></li>";
+  }
+
+}
  ?>

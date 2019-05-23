@@ -11,7 +11,8 @@
       <li><a href=index.php class="menu" value="">MINA<br>RECEPT</a></li>
       <?php
       include_once("/../bootstrap.php");
-      logbtn();
+      log_btn();
+      admin_btn();
        ?>
        <br>
        <br>
