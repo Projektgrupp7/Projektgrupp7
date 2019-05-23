@@ -14,3 +14,36 @@ p {
   text-align: left;
   font-size: 14px;
 }
+.header{
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.header #header {
+  font-size: 80px;
+  text-decoration: none;
+  color: beige;
+}
+
+.header li{
+  float: left;
+  width: 150px;
+}
+
+.header ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightblue;
+}
+
+.header .menu{
+  display: block;
+  color: beige;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.header .menu:hover{
+  background-color: #C2B9B0;
+}

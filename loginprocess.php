@@ -8,6 +8,7 @@ if(val_log($email, $pw)){
     if(md5(get_one($email, "salt") . $pw) === get_one($email, "pw"))
     {
       $_SESSION['email'] = $email;
+      $_SESSION['loggedin'] = true;
     }
     else{
       header("Location: login.php?msg=Incorrect email or password.");
