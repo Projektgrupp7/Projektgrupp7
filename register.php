@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
       <link rel="stylesheet" href="assets/stylesheet.css">
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
       <?php include_once("assets/bootstrap.php");?>
     <title>Register</title>
   </head>

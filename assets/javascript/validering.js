@@ -39,3 +39,31 @@ function log_val()
        return true;
      }
   }
+
+  //Validerar alla obligarotiska fält för nya recept på clientsidan
+  function rec_val(){
+    let recname = document.recipe.recipename.value;
+    let recdesc = document.recipe.description.value;
+    let recingr = document.recipe.ingredients.value;
+    let recinst = document.recipe.instructions.value;
+    let time = document.recipe.time.value;
+
+    if(!(/\S+/).test(recname) || !(/\S+/).test(recdesc) ||!(/\S+/).test(recingr)
+    ||!(/\S+/).test(recinst))
+    {
+      alert("Vänligen fyll i samtliga textfält.");
+      return false;
+    }
+
+    if(!(/\S+/).test(time) || isNaN(time))
+    {
+      alert("Vänligen fyll i tiden i antal minuter.");
+      return false;
+    }
+
+    else {
+      return true;
+    }
+
+
+  }

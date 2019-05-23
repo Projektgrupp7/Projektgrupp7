@@ -30,26 +30,14 @@ function db($sql, $conn){
   }
 }
 
-#Funktion som hämtar en användares salt från databasen
-function getSalt($email)
+#Funktion som hämtar värde ur en angiven column för angiven mail
+function get_one($email, $column)
 {
-  $sql = "SELECT salt FROM users WHERE email = '$email'";
+  $sql = "SELECT " . $column ." FROM users WHERE email = '$email'";
   $conn = connect();
   $result = mysqli_fetch_array(mysqli_query($conn,$sql));
   $salt = $result[0];
   mysqli_close($conn);
   return $salt;
 }
-
-#Funktion som hämtar det hashade lösenordet från db
-function getPw($email)
-{
-  $sql = "SELECT pw FROM users WHERE email = '$email'";
-  $conn = connect();
-  $result = mysqli_fetch_array(mysqli_query($conn,$sql));
-  $pw = $result[0];
-  mysqli_close($conn);
-  return $pw;
-}
-
 ?>
